@@ -4,7 +4,8 @@
   "description": "Backend for Fast-Flip game",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Oluwadamilola Falodun (Damxy)",
