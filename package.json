@@ -2,10 +2,12 @@
   "name": "fast-flip-backend",
   "version": "1.0.0",
   "description": "Backend for Fast-Flip game",
-  "main": "app.js",
+  "main": "index.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Oluwadamilola Falodun (Damxy)",
