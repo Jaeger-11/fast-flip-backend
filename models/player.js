@@ -13,7 +13,7 @@ const playerSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, "Please provide username"],
+        required: [true, "Please provide password"],
         minlength: 6
     }
 })
