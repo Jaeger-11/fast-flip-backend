@@ -25,8 +25,17 @@ const getScores = async (req,res) => {
 }
 
 const getHighScores = async (req,res) => {
-    const scores = await Score.find({}).select('score username timeTaken').sort('-score').limit(10)
-    res.status(200).json({scores, count: scores.length})
+    const scores = await Score.find({}).select('score username timeTaken').sort('-score')
+    const highscores = scores.reduce((acc, current) => {
+        let existing = acc.find(item => item.username === current.username);
+        if(!existing){
+            acc.push(current);
+        } else if (existing.score < current.score){
+            acc[acc.indexOf(existing)] = current;
+        }
+        return acc;
+    },[]);
+    res.status(200).json({highscores: highscores.slice(0,10), count: highscores.length})
 }
 
 const saveScore = async (req,res) => {
